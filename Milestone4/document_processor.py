@@ -16,7 +16,6 @@ class DocumentProcessor:
         try:
             with open(image_path, "rb") as image_file:
                 encoded_image = base64.b64encode(image_file.read()).decode('utf-8')
-                
                 return encoded_image
         except FileNotFoundError:
             st.error(f"Image not found: {image_path}")

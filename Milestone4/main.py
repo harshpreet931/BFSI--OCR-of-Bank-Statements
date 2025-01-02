@@ -15,7 +15,7 @@ import zipfile
 from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
 from document_processor import DocumentProcessor
-from visualizations import visualize_comparative_data, process_comparative_data,create_interactive_pie_chart
+from visualizations import visualize_comparative_data, process_comparative_data, create_interactive_pie_chart
 
 # Initialize session state
 if 'processed_dfs' not in st.session_state:
@@ -27,7 +27,7 @@ if 'processing_errors' not in st.session_state:
 if 'cloudinary_images' not in st.session_state:
     st.session_state.cloudinary_images = []
 
-# Load environment variables and configure Cloudinary
+# Configure Cloudinary with your credentials from secrets
 cloudinary.config(
     cloud_name=st.secrets["cloudinary"]["CLOUDINARY_CLOUD_NAME"],
     api_key=st.secrets["cloudinary"]["CLOUDINARY_API_KEY"],
